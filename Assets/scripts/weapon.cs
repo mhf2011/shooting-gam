@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class weapon : MonoBehaviour
 {
@@ -13,10 +15,12 @@ public class weapon : MonoBehaviour
         {
             shoot = playerInputs.shoot;
             Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity);
+
+           
             if (hit.collider.CompareTag("Player"))
-            {
-                Destroy(hit.collider.gameObject);
-            }
+                {
+                    Destroy(hit.collider.gameObject);
+                }
 
 
 
